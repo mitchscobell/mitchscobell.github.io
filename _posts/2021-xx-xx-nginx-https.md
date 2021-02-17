@@ -1,8 +1,8 @@
 ---
 layout: post
-title: template
+title: NGINX HTTPS Setup
 published: false
-tags: tags go here
+tags: nginx linux setup raspberry pi https secure raspi
 excerpt_separator: <!--more-->
 ---
 
