@@ -1,6 +1,6 @@
 # README.md
 
-## These are basically notes to myself :)
+## These are notes to myself so I remember how to run it :)
 
 [Forked from jekyll-now](https://github.com/barryclark/jekyll-now)
 
