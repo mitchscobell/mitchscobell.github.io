@@ -42,7 +42,7 @@ Dim iFileNo as Integer
 Dim sFileText as String 
 Dim iFileNo as Integer 
   iFileNo = FreeFile 
-      'open the file for writing 
+  'open the file for writing 
   Open "C:\Test.txt" For Output As #iFileNo 
 'please note, if this file already exists it will be overwritten! 
 
@@ -63,16 +63,16 @@ Dim iFileNo as Integer
 Dim sFileText as String
 Dim iFileNo as Integer
   iFileNo = FreeFile
-      'open the file for writing
+  'open the file for writing
   Open "C:\Test.txt" For Append As #iFileNo
 'please note, if this file already exists it will be overwritten!
  
-      'write some example text to the file
+  'write some example text to the file
   Print #iFileNo, Format(Now, "mm/dd/yyyy hh:mm:ss") & "|" & "first line of text"
   Print #iFileNo, Format(Now, "mm/dd/yyyy hh:mm:ss") & "|" & "   second line of text"
   Print #iFileNo, Format(Now, "mm/dd/yyyy hh:mm:ss") & "|" & ""  'blank line
   Print #iFileNo, Format(Now, "mm/dd/yyyy hh:mm:ss") & "|" & "some more text!"
  
-      'close the file (if you dont do this, you wont be able to open it again!)
+  'close the file (if you dont do this, you wont be able to open it again!)
   Close #iFileNo
 ```
