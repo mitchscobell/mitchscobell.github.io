@@ -10,7 +10,7 @@ excerpt_separator: <!--more-->
 ## Overview
 I've had to debug several of the VB6 DLL's during development and found it's invaluable to be able to write to a log to figure out where the processing is getting hung up.
 
-This forum post gave me the code to do this:  http://www.vbforums.com/showthread.php?342619.html
+[This forum post gave me the code to do this](http://www.vbforums.com/showthread.php?342619.html)
 
 I'll also copy the code below in case the website above goes away.  I've also added a way to append to a file to have a rolling log.  This isn't meant to be used for long term since there is no logic to roll to a new file.
 <!--more-->
