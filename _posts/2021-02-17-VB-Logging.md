@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 
 ## Overview
-I've had to debug several of the VB6 DLL's during development and found it's invaluable to be able to write to a log to figure out where the processing is getting hung up.
+I've had to debug several VB6 DLL's during development and found it's invaluable to be able to write to a log to figure out where the processing is getting hung up.
 
 [This forum post gave me the code to do this](http://www.vbforums.com/showthread.php?342619.html)
 
