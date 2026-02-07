@@ -141,7 +141,7 @@ See `_posts/_template.md` for a template.
 
 This site is automatically deployed to GitHub Pages when changes are pushed to the main branch. GitHub Pages has built-in support for Jekyll, so no manual build step or custom GitHub Actions workflow is required for deployment.
 
-The site is available at: [https://mitchscobell.com](https://mitchscobell.com)
+The site is available at: [https://blog.mitchscobell.com](https://blog.mitchscobell.com)
 
 GitHub Pages automatically:
 
