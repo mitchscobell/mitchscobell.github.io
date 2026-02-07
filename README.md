@@ -31,13 +31,12 @@ Before running this project locally, you need to have the following installed:
 sudo apt-get update -y && sudo apt-get upgrade -y
 
 # Install Ruby and build tools
-sudo apt-get install ruby-full build-essential zlib1g-dev
+sudo apt-get install -y ruby-full build-essential zlib1g-dev
 
 # Install Bundler and Jekyll
 gem install bundler jekyll
 
-# If you encounter permission issues, you may need to configure gem installation path
-# or use sudo (though it's not recommended for gem installations)
+# If you encounter permission issues, see the Troubleshooting section below for solutions
 ```
 
 ### macOS
