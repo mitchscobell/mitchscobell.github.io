@@ -10,17 +10,49 @@
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
+/* THEME VARIABLES */
+/**************/
+
+:root {
+  --bg-primary: #fff;
+  --bg-secondary: #eee;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --text-heading: #222;
+  --border-color: #eee;
+  --link-color: #4183C4;
+  --code-bg: #f5f5f5;
+  --selection-bg: #eee;
+  --selection-text: #000;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --text-heading: #f0f0f0;
+  --border-color: #404040;
+  --link-color: #58a6ff;
+  --code-bg: #2d2d2d;
+  --selection-bg: #404040;
+  --selection-text: #fff;
+}
+
+/**************/
 /* BASE RULES */
 /**************/
 
 html {
   font-size: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
-	background: $white;
+	background: var(--bg-primary);
   font: 18px/1.4 $helvetica;
-  color: $darkGray;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -32,7 +64,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
-  color: $darkerGray;
+  color: var(--text-heading);
   font-weight: bold;
 
   line-height: 1.7;
@@ -61,7 +93,7 @@ h3 {
 
 h4 {
   font-size: 18px;
-  color: $gray;
+  color: var(--text-secondary);
 }
 
 p {
@@ -69,11 +101,11 @@ p {
 }
 
 a {
-  color: $blue;
+  color: var(--link-color);
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
-    color: $blue;
+    color: var(--link-color);
   }
 }
 
@@ -117,17 +149,17 @@ img {
 
 .date {
   font-style: italic;
-  color: $gray;
+  color: var(--text-secondary);
 }
 
 // Specify the color of the selection
 ::-moz-selection {
-  color: $black;
-  background: $lightGray;
+  color: var(--selection-text);
+  background: var(--selection-bg);
 }
 ::selection {
-  color: $black;
-  background: $lightGray;
+  color: var(--selection-text);
+  background: var(--selection-bg);
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -156,7 +188,11 @@ img {
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 
   @include mobile {
     text-align: center;
@@ -192,7 +228,7 @@ img {
 
 .site-name {
   margin: 0;
-  color: $darkGray;
+  color: var(--text-primary);
   cursor: pointer;
   font-family: $helveticaNeue;
   font-weight: 300;
@@ -202,7 +238,7 @@ img {
 
 .site-description {
   margin: -5px 0 0 0;
-  color: $gray;
+  color: var(--text-secondary);
   font-size: 16px;
 
   @include mobile {
@@ -212,9 +248,12 @@ img {
 
 nav {
   float: right;
-  margin-top: 23px; // @TODO: Vertically middle align
+  margin-top: 23px;
   font-family: $helveticaNeue;
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 
   @include mobile {
     float: none;
@@ -224,15 +263,15 @@ nav {
   }
 
   a {
-    margin-left: 20px;
-    color: $darkGray;
+    margin-left: 0;
+    color: var(--text-primary);
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
 
     @include mobile {
       margin: 0 10px;
-      color: $blue;
+      color: var(--link-color);
     }
   }
 }
@@ -243,7 +282,7 @@ nav {
 
 .posts > .post {
   padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .posts > .post:last-child {
@@ -254,9 +293,9 @@ nav {
 .post {
   blockquote {
     margin: 1.8em .8em;
-    border-left: 2px solid $gray;
+    border-left: 2px solid var(--text-secondary);
     padding: 0.1em 1em;
-    color: $gray;
+    color: var(--text-secondary);
     font-size: 22px;
     font-style: italic;
   }
@@ -273,14 +312,70 @@ nav {
 
 .wrapper-footer {
   margin-top: 50px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
 }
 
 footer {
   padding: 20px 0;
   text-align: center;
+}
+
+// Theme toggle button
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  padding: 0;
+  color: var(--text-primary);
+  flex-shrink: 0;
+  
+  @include mobile {
+    width: 36px;
+    height: 36px;
+    margin-top: 10px;
+  }
+  
+  &:hover {
+    background-color: var(--bg-secondary);
+    transform: rotate(20deg);
+  }
+  
+  svg {
+    width: 20px;
+    height: 20px;
+    
+    @include mobile {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  .sun-icon {
+    display: none;
+  }
+  
+  .moon-icon {
+    display: block;
+  }
+}
+
+[data-theme="dark"] .theme-toggle {
+  .sun-icon {
+    display: block;
+  }
+  
+  .moon-icon {
+    display: none;
+  }
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
