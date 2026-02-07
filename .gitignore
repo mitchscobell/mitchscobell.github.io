@@ -10,3 +10,7 @@ node_modules
 package.json
 \blog
 \.jekyll-cache
+vendor/
+.ruby-version
+*.bak
+*.bak2
