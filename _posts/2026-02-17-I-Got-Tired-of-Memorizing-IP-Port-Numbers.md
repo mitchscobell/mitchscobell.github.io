@@ -62,25 +62,25 @@ Here's how all the pieces fit together:
                           ↓
 ┌──────────────────────────────────────────────────────┐
 │  Home Network (192.168.1.0/24)                       │
-│                                                       │
+│                                                      │
 │  ┌────────────────────────────────────────────────┐  │
-│  │  Router/Pi-hole (192.168.1.1)                 │  │
+│  │  Router/Pi-hole (192.168.1.1)                  │  │
 │  │  - Local DNS server                            │  │
-│  │  - Maps *.mscob.com → 192.168.1.10            │  │
-│  │  - Firewall (blocks external access)          │  │
+│  │  - Maps *.mscob.com → 192.168.1.10             │  │
+│  │  - Firewall (blocks external access)           │  │
 │  └────────────────────────────────────────────────┘  │
-│                          ↓                            │
+│                          ↓                           │
 │         proxmox.mscob.com → 192.168.1.10             │
-│                          ↓                            │
+│                          ↓                           │
 │  ┌────────────────────────────────────────────────┐  │
-│  │  Nginx Proxy Manager (192.168.1.10)           │  │
-│  │  - SSL termination (*.mscob.com cert)         │  │
-│  │  - Reverse proxy routing                      │  │
-│  │  - Auto cert renewal via DNS challenge        │  │
+│  │  Nginx Proxy Manager (192.168.1.10)            │  │
+│  │  - SSL termination (*.mscob.com cert)          │  │
+│  │  - Reverse proxy routing                       │  │
+│  │  - Auto cert renewal via DNS challenge         │  │
 │  └────────────────────────────────────────────────┘  │
-│                          ↓                            │
+│                          ↓                           │
 │         Routes to actual service                     │
-│                          ↓                            │
+│                          ↓                           │
 │  ┌────────────────────────────────────────────────┐  │
 │  │  Proxmox (192.168.1.5:8006)                    │  │
 │  │  Portainer (192.168.1.15:9000)                 │  │
