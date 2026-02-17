@@ -6,10 +6,6 @@ tags: homelab SSL nginx cloudflare letsencrypt dns docker pihole proxmox
 excerpt_separator: <!--more-->
 ---
 
-# I Got Tired of Memorizing IP:Port Numbers
-
----
-
 ## The Problem
 
 Every home lab starts the same way. You spin up a service. It gets an IP and a port. You bookmark it. Then you spin up another. Then another. Fast forward a few months and you're looking at this mess:
